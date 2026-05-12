@@ -4,153 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formation Collaborateur : Sécurité des Données - CIEL-GAS</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        :root {
-            --primary: #0A365C;
-            --accent: #F28C28;
-            --bg: #f8fafc;
-            --white: #ffffff;
-            --success: #10b981;
-        }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
-        
-        body {
-            background-color: var(--bg);
-            color: #1e293b;
-            font-family: 'Inter', sans-serif;
-            display: flex;
-        }
-
-        /* BARRE LATERALE */
-        nav {
-            width: 320px;
-            background: var(--primary);
-            color: white;
-            padding: 40px 25px;
-            position: fixed;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            box-shadow: 5px 0 15px rgba(0,0,0,0.1);
-        }
-
-        .nav-logo { margin-bottom: 50px; border-left: 4px solid var(--accent); padding-left: 15px; }
-        .nav-logo h1 { font-family: 'Poppins'; font-size: 1.5rem; line-height: 1.1; }
-        .nav-logo span { color: var(--accent); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; }
-
-        nav a {
-            color: rgba(255,255,255,0.7);
-            text-decoration: none;
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 8px;
-            transition: 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            font-weight: 500;
-        }
-
-        nav a:hover, nav a.active {
-            background: rgba(255,255,255,0.1);
-            color: white;
-        }
-
-        nav a.active { border-right: 4px solid var(--accent); }
-
-        /* CONTENU */
-        main { margin-left: 320px; padding: 60px; width: 100%; max-width: 1100px; }
-
-        .module {
-            background: var(--white);
-            border-radius: 24px;
-            padding: 50px;
-            margin-bottom: 50px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            border: 1px solid #e2e8f0;
-        }
-
-        .module-tag {
-            background: rgba(242, 140, 40, 0.1);
-            color: var(--accent);
-            padding: 6px 15px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.8rem;
-            margin-bottom: 20px;
-            display: inline-block;
-        }
-
-        h2 { font-family: 'Poppins'; color: var(--primary); font-size: 2.2rem; margin-bottom: 25px; }
-        p { font-size: 1.1rem; line-height: 1.7; color: #475569; margin-bottom: 30px; }
-
-        /* GRILLE D'USAGE */
-        .usage-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 30px; }
-        
-        .usage-card {
-            background: #f1f5f9;
-            padding: 30px;
-            border-radius: 20px;
-            border-bottom: 4px solid var(--primary);
-        }
-
-        .usage-card i { color: var(--accent); font-size: 2.5rem; margin-bottom: 20px; }
-        .usage-card h3 { color: var(--primary); font-family: 'Poppins'; margin-bottom: 15px; }
-
-        /* SCHEMA SIMPLIFIE */
-        .schema-box {
-            background: var(--primary);
-            color: white;
-            padding: 40px;
-            border-radius: 20px;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            text-align: center;
-            margin: 40px 0;
-        }
-
-        .schema-item i { font-size: 3rem; color: var(--accent); margin-bottom: 15px; }
-        .schema-item p { color: white; margin-bottom: 0; } /* Règle ajoutée pour forcer le texte en blanc et retirer la marge */
-        
-        /* QUIZ */
-        .quiz-section { background: #0f172a; color: white; padding: 40px; border-radius: 20px; }
-        .option {
-            background: rgba(255,255,255,0.05);
-            padding: 20px;
-            margin: 12px 0;
-            border-radius: 12px;
-            cursor: pointer;
-            transition: 0.3s;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-        .option:hover { background: rgba(255,255,255,0.15); border-color: var(--accent); }
-
-        footer { text-align: center; color: #94a3b8; font-size: 0.9rem; margin-top: 50px; }
-    </style>
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <div id="progress-bar"></div>
 
     <nav>
         <div class="nav-logo">
             <h1>CIEL-GAS<br>CryptoSecure</h1>
             <span>Formation Utilisateur</span>
         </div>
-        <a href="#pourquoi" class="active"><i class="fa-solid fa-lightbulb"></i> Pourquoi crypter ?</a>
-        <a href="#principe"><i class="fa-solid fa-lock"></i> Le principe simple</a>
-        <a href="#usage"><i class="fa-solid fa-laptop"></i> Guide d'utilisation</a>
-        <a href="#cle"><i class="fa-solid fa-key"></i> Votre clé secrète</a>
-        <a href="#quiz"><i class="fa-solid fa-check-double"></i> Validation</a>
+        <div class="nav-links">
+            <a href="#pourquoi" class="nav-item active"><i class="fa-solid fa-lightbulb"></i> Pourquoi crypter ?</a>
+            <a href="#principe" class="nav-item"><i class="fa-solid fa-lock"></i> Le principe simple</a>
+            <a href="#usage" class="nav-item"><i class="fa-solid fa-laptop"></i> Guide d'utilisation</a>
+            <a href="#cle" class="nav-item"><i class="fa-solid fa-key"></i> Votre clé secrète</a>
+            <a href="#quiz" class="nav-item"><i class="fa-solid fa-check-double"></i> Validation</a>
+        </div>
     </nav>
 
     <main>
         <section id="pourquoi" class="module">
             <span class="module-tag">Module 1</span>
             <h2>Pourquoi protéger nos données ?</h2>
-            <p>Chez CIEL-GAS, nous manipulons des documents sensibles (RH, factures, plans techniques). Un simple mail envoyé à la mauvaise personne ou une clé USB perdue peut mettre l'entreprise en danger.</p>
+            <p>Chez CIEL-GAS, nous manipulons des documents sensibles (RH, factures, plans techniques). Un simple mail envoyé à la mauvaise personne peut mettre l'entreprise en danger.</p>
             <div class="usage-grid">
                 <div class="usage-card">
                     <i class="fa-solid fa-gavel"></i>
@@ -158,9 +40,9 @@
                     <p>La loi nous oblige à protéger les données personnelles de nos clients et employés.</p>
                 </div>
                 <div class="usage-card">
-                    <i class="fa-solid fa-shield-cat"></i>
+                    <i class="fa-solid fa-shield-halved"></i>
                     <h3>Anti-Espionnage</h3>
-                    <p>Nos secrets de fabrication et nos tarifs doivent rester confidentiels face à la concurrence.</p>
+                    <p>Nos secrets de fabrication doivent rester confidentiels face à la concurrence.</p>
                 </div>
             </div>
         </section>
@@ -168,22 +50,22 @@
         <section id="principe" class="module">
             <span class="module-tag">Module 2</span>
             <h2>Comment ça marche ?</h2>
-            <p>Pas besoin d'être informaticien. Le cryptage transforme votre document en un "brouillon" illisible. Seul celui qui possède la <strong>Clé</strong> peut le rendre à nouveau lisible.</p>
+            <p>Le cryptage transforme votre document en un "brouillon" illisible. Seul celui qui possède la <strong>Clé</strong> peut le déchiffrer.</p>
             
             <div class="schema-box">
                 <div class="schema-item">
                     <i class="fa-solid fa-file-lines"></i>
-                    <p>Document<br>Clair</p>
+                    <p>Document Clair</p>
                 </div>
                 <i class="fa-solid fa-arrow-right-long fa-2x"></i>
                 <div class="schema-item">
                     <i class="fa-solid fa-key"></i>
-                    <p>Clé de<br>Cryptage</p>
+                    <p>Clé de Cryptage</p>
                 </div>
                 <i class="fa-solid fa-arrow-right-long fa-2x"></i>
                 <div class="schema-item">
                     <i class="fa-solid fa-file-shield"></i>
-                    <p>Document<br>Protégé</p>
+                    <p>Document Protégé</p>
                 </div>
             </div>
         </section>
@@ -191,22 +73,21 @@
         <section id="usage" class="module">
             <span class="module-tag">Module 3</span>
             <h2>Votre routine CryptoSecure</h2>
-            <p>L'utilisation est intégrée directement dans vos outils habituels. Voici les 3 étapes réflexes :</p>
             <div class="usage-grid">
                 <div class="usage-card">
                     <i class="fa-solid fa-1"></i>
                     <h3>Sélection</h3>
-                    <p>Faites un clic-droit sur le fichier ou le dossier que vous souhaitez protéger.</p>
+                    <p>Faites un clic-droit sur le fichier ou le dossier à protéger.</p>
                 </div>
                 <div class="usage-card">
                     <i class="fa-solid fa-2"></i>
                     <h3>Cryptage</h3>
-                    <p>Choisissez "Crypter avec CryptoSecure" et saisissez votre mot de passe de session.</p>
+                    <p>Choisissez "Crypter avec CryptoSecure" et saisissez votre mot de passe.</p>
                 </div>
                 <div class="usage-card">
                     <i class="fa-solid fa-3"></i>
                     <h3>Partage</h3>
-                    <p>Le fichier est maintenant une forteresse. Vous pouvez l'envoyer par mail en toute sécurité.</p>
+                    <p>Envoyez le fichier par mail en toute sérénité.</p>
                 </div>
             </div>
         </section>
@@ -214,23 +95,22 @@
         <section id="cle" class="module">
             <span class="module-tag">Module 4</span>
             <h2>La sécurité de votre Clé</h2>
-            <p>La force du cryptage dépend de votre mot de passe. Si votre clé est "123456", le cryptage ne sert à rien.</p>
-            <div style="background: #fff3cd; border-left: 5px solid #ffc107; padding: 25px; border-radius: 10px; color: #856404;">
-                <strong>💡 Rappel Sécurité :</strong> Un bon mot de passe pour CryptoSecure doit faire au moins 12 caractères et mélanger Majuscules, Minuscules et Chiffres.
+            <div class="alert-box">
+                <strong>💡 Rappel Sécurité :</strong> Un bon mot de passe doit faire au moins 12 caractères (Majuscules, Minuscules, Chiffres).
             </div>
         </section>
 
         <section id="quiz" class="module quiz-section">
-            <h2 style="color: white;">Validation des acquis</h2>
-            <p style="color: rgba(255,255,255,0.7);">Testez vos connaissances avant de recevoir votre habilitation CryptoSecure.</p>
+            <h2>Validation des acquis</h2>
+            <p>Testez vos connaissances avant de recevoir votre habilitation.</p>
             
-            <div id="q1">
-                <p><strong>Question : Si j'envoie un fichier crypté par erreur à la mauvaise personne, peut-elle le lire ?</strong></p>
-                <div class="option" onclick="answer(false)">Oui, car elle a reçu le fichier.</div>
-                <div class="option" id="correct" onclick="answer(true)">Non, car elle ne possède pas la clé de décryptage.</div>
-                <div class="option" onclick="answer(false)">Seulement si elle utilise le même ordinateur que moi.</div>
+            <div class="quiz-container">
+                <p><strong>Question : Si j'envoie un fichier crypté par erreur, peut-on le lire ?</strong></p>
+                <div class="option" onclick="checkAnswer(false, this)">Oui, car il a été reçu.</div>
+                <div class="option" onclick="checkAnswer(true, this)">Non, sans la clé c'est impossible.</div>
+                <div class="option" onclick="checkAnswer(false, this)">Seulement sur mon ordinateur.</div>
             </div>
-            <p id="result" style="margin-top: 20px; font-weight: bold; display: none;"></p>
+            <p id="result-message"></p>
         </section>
 
         <footer>
@@ -238,27 +118,6 @@
         </footer>
     </main>
 
-    <script>
-        function answer(isCorrect) {
-            const res = document.getElementById('result');
-            res.style.display = "block";
-            if(isCorrect) {
-                res.innerHTML = "✅ Bravo ! C'est exactement le principe de la solution.";
-                res.style.color = "#10b981";
-            } else {
-                res.innerHTML = "❌ Attention. Sans la clé, le fichier reste illisible, peu importe qui le reçoit.";
-                res.style.color = "#f87171";
-            }
-        }
-
-        // Navigation active
-        const links = document.querySelectorAll('nav a');
-        links.forEach(link => {
-            link.addEventListener('click', () => {
-                links.forEach(l => l.classList.remove('active'));
-                link.classList.add('active');
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
