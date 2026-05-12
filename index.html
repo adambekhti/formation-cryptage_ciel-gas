@@ -20,7 +20,7 @@
             <span>Formation Utilisateur</span>
         </div>
         <div class="nav-links">
-            <a href="#pourquoi" class="nav-item active"><i class="fa-solid fa-lightbulb"></i> Pourquoi crypter ?</a>
+            <a href="#pourquoi" class="nav-item active"><i class="fa-solid fa-lightbulb"></i> Pourquoi chiffrer ?</a>
             <a href="#principe" class="nav-item"><i class="fa-solid fa-lock"></i> Le principe simple</a>
             <a href="#usage" class="nav-item"><i class="fa-solid fa-laptop"></i> Guide d'utilisation</a>
             <a href="#cle" class="nav-item"><i class="fa-solid fa-key"></i> Votre clé secrète</a>
@@ -60,7 +60,7 @@
                 <i class="fa-solid fa-arrow-right-long fa-2x"></i>
                 <div class="schema-item">
                     <i class="fa-solid fa-key"></i>
-                    <p>Clé de Cryptage</p>
+                    <p>Clé de Chiffrement</p>
                 </div>
                 <i class="fa-solid fa-arrow-right-long fa-2x"></i>
                 <div class="schema-item">
@@ -81,8 +81,8 @@
                 </div>
                 <div class="usage-card">
                     <i class="fa-solid fa-2"></i>
-                    <h3>Cryptage</h3>
-                    <p>Choisissez "Crypter avec CryptoSecure" et saisissez votre mot de passe.</p>
+                    <h3>Chiffrement</h3>
+                    <p>Choisissez "Chiffrer avec CryptoSecure" et saisissez votre mot de passe.</p>
                 </div>
                 <div class="usage-card">
                     <i class="fa-solid fa-3"></i>
@@ -96,21 +96,42 @@
             <span class="module-tag">Module 4</span>
             <h2>La sécurité de votre Clé</h2>
             <div class="alert-box">
-                <strong>💡 Rappel Sécurité :</strong> Un bon mot de passe doit faire au moins 12 caractères (Majuscules, Minuscules, Chiffres).
+                <strong>💡 Rappel Sécurité :</strong> Un bon mot de passe doit faire au moins 12 caractères.
+            </div>
+            <div style="margin-top: 20px;">
+                <p>Testez la force d'un mot de passe :</p>
+                <input type="password" id="pw-tester" placeholder="Tapez ici..." 
+                       style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; margin-top: 10px; outline: none;">
+            </div>
+        </section>
+
+        <section id="asymetrique" class="module">
+           <span class="module-tag">Module 2.5</span>
+           <h2>Le secret du partage : L'Asymétrie</h2>
+           <p>Comment partager un fichier sans donner son mot de passe ? On utilise un duo de clés.</p>
+           <div class="usage-grid">
+               <div class="usage-card">
+                   <i class="fa-solid fa-envelope-open"></i>
+                   <h3>La Clé Publique</h3>
+                   <p>C'est comme un cadenas ouvert que vous donnez à tout le monde. N'importe qui peut l'utiliser pour fermer un coffre.</p>
+               </div>
+               <div class="usage-card">
+                   <i class="fa-solid fa-key"></i>
+                   <h3>La Clé Privée</h3>
+                   <p>C'est la seule clé au monde qui peut ouvrir ce cadenas. Vous devez la garder secrète.</p>
+               </div>
             </div>
         </section>
 
         <section id="quiz" class="module quiz-section">
-            <h2>Validation des acquis</h2>
-            <p>Testez vos connaissances avant de recevoir votre habilitation.</p>
-            
-            <div class="quiz-container">
-                <p><strong>Question : Si j'envoie un fichier crypté par erreur, peut-on le lire ?</strong></p>
-                <div class="option" onclick="checkAnswer(false, this)">Oui, car il a été reçu.</div>
-                <div class="option" onclick="checkAnswer(true, this)">Non, sans la clé c'est impossible.</div>
-                <div class="option" onclick="checkAnswer(false, this)">Seulement sur mon ordinateur.</div>
-            </div>
-            <p id="result-message"></p>
+           <h2>Validation des acquis</h2>
+           <p>Testez vos connaissances avant de recevoir votre habilitation.</p>
+    
+           <div id="q1" class="quiz-container">
+               <p>Chargement du quiz...</p> 
+           </div>
+
+           <p id="result-message" style="margin-top: 20px; font-weight: bold; min-height: 1.5em;"></p>
         </section>
 
         <footer>
