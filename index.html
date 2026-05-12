@@ -93,17 +93,28 @@
         </section>
 
         <section id="cle" class="module">
-            <span class="module-tag">Module 4</span>
-            <h2>La sécurité de votre Clé</h2>
-            <div class="alert-box">
-                <strong>💡 Rappel Sécurité :</strong> Un bon mot de passe doit faire au moins 12 caractères.
-            </div>
-            <div style="margin-top: 20px;">
-                <p>Testez la force d'un mot de passe :</p>
-                <input type="password" id="pw-tester" placeholder="Tapez ici..." 
-                       style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; margin-top: 10px; outline: none;">
-            </div>
-        </section>
+           <span class="module-tag">Module 4</span>
+           <h2>La sécurité de votre Clé</h2>
+           <div class="alert-box">
+               <strong>💡 Rappel Sécurité :</strong> Un bon mot de passe est votre seule protection.
+           </div>
+
+           <div class="pw-tester-container" style="margin-top: 20px;">
+               <p>Testez la force d'un mot de passe :</p>
+               <input type="password" id="pw-tester" placeholder="Tapez ici..." 
+                      style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; outline: none; transition: all 0.3s;">
+        
+               <div id="pw-help" style="margin-top: 15px; font-size: 0.9rem; color: #64748b;">
+                   <p style="margin-bottom: 5px; font-weight: 600;">Votre mot de passe doit contenir :</p>
+                   <ul style="list-style: none; padding: 0;">
+                       <li id="req-length"><i class="fa-solid fa-circle-xmark"></i> Au moins 12 caractères</li>
+                       <li id="req-upper"><i class="fa-solid fa-circle-xmark"></i> Une majuscule</li>
+                       <li id="req-number"><i class="fa-solid fa-circle-xmark"></i> Un chiffre</li>
+                       <li id="req-special"><i class="fa-solid fa-circle-xmark"></i> Un caractère spécial (@, #, !, ...)</li>
+                   </ul>
+               </div>
+           </div>
+       </section>
 
         <section id="asymetrique" class="module">
            <span class="module-tag">Module 2.5</span>

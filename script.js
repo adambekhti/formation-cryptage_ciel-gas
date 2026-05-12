@@ -124,16 +124,43 @@ function initPasswordTester() {
     const input = document.getElementById('pw-tester');
     if (!input) return;
 
+    // Récupération des éléments de la checklist
+    const requirements = {
+        length: { el: document.getElementById('req-length'), regex: /.{12,}/ },
+        upper: { el: document.getElementById('req-upper'), regex: /[A-Z]/ },
+        number: { el: document.getElementById('req-number'), regex: /[0-9]/ },
+        special: { el: document.getElementById('req-special'), regex: /[^A-Za-z0-9]/ }
+    };
+
     input.addEventListener('input', () => {
         const val = input.value;
         let score = 0;
-        if (val.length >= 12) score++;
-        if (/[A-Z]/.test(val)) score++;
-        if (/[0-9]/.test(val)) score++;
-        if (/[^A-Za-z0-9]/.test(val)) score++;
 
+        // Vérification de chaque critère
+        Object.keys(requirements).forEach(key => {
+            const req = requirements[key];
+            const isValid = req.regex.test(val);
+
+            if (isValid) {
+                req.el.style.color = "#10b981"; // Vert
+                req.el.querySelector('i').className = "fa-solid fa-circle-check";
+                score++;
+            } else {
+                req.el.style.color = "#64748b"; // Gris/Bleu par défaut
+                req.el.querySelector('i').className = "fa-solid fa-circle-xmark";
+            }
+        });
+
+        // Changement de couleur de la bordure du champ selon le score global
         const colors = ['#f87171', '#fbbf24', '#34d399', '#10b981'];
-        input.style.borderBottom = `4px solid ${colors[score-1] || '#cbd5e1'}`;
+        if (val.length === 0) {
+            input.style.borderColor = "#ddd";
+            input.style.boxShadow = "none";
+        } else {
+            const color = colors[Math.min(score, colors.length) - 1] || colors[0];
+            input.style.borderColor = color;
+            input.style.boxShadow = `0 0 5px ${color}`;
+        }
     });
 }
 
