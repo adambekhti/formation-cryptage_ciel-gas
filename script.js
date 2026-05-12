@@ -12,7 +12,7 @@ const quizData = [
             "Seulement si elle utilise le même ordinateur que moi."
         ],
         correct: 1,
-        feedback: "✅ Exact ! Sans la clé, le fichier reste une suite de caractères incohérents."
+        feedback: " Exact ! Sans la clé, le fichier reste une suite de caractères incohérents."
     },
     {
         question: "Quel terme est techniquement correct lorsqu'on utilise une clé ?",
@@ -22,7 +22,7 @@ const quizData = [
             "Codage"
         ],
         correct: 1,
-        feedback: "✅ Bravo ! On dit 'Chiffrer'. Le mot 'Crypter' est un abus de langage en français."
+        feedback: " Bravo ! On dit 'Chiffrer'. Le mot 'Crypter' est un abus de langage en français."
     },
     {
         question: "Un mot de passe '123456' est-il efficace pour le chiffrement ?",
@@ -32,7 +32,7 @@ const quizData = [
             "Oui, tant que personne ne me voit le taper."
         ],
         correct: 1,
-        feedback: "✅ Exactement. La force du verrou dépend de la complexité de la clé."
+        feedback: " Exactement. La force du verrou dépend de la complexité de la clé."
     }
 ];
 
@@ -92,7 +92,7 @@ function handleQuizAnswer(selectedIndex, element) {
         }, 2000);
     } else {
         element.classList.add('wrong');
-        resultMsg.innerHTML = "❌ Mauvaise réponse. Réessayez !";
+        resultMsg.innerHTML = " Mauvaise réponse. Réessayez !";
         resultMsg.style.color = "#f87171";
         
         // Laisser l'utilisateur réessayer après un court délai
